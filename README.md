@@ -1,4 +1,4 @@
-#axocli
+# axocli
 
 [![crates.io](https://img.shields.io/crates/v/axocli.svg)](https://crates.io/crates/axocli)
 [![docs](https://docs.rs/axocli/badge.svg)](https://docs.rs/axocli)
