@@ -35,7 +35,10 @@ fn run(app: &axocli::CliApp<CliArgs>) -> Result<(), Report> {
     // Here we do the bulk of the logic in our app, very complex!
 
     // Some example error conditions, both manual and panic
-    assert!(app.config.exclaim_count > 0, "i have no exclamation marks but i must scream");
+    assert!(
+        app.config.exclaim_count > 0,
+        "i have no exclamation marks but i must scream"
+    );
     if app.config.exclaim_count < 3 {
         return Err(AxoAppError::NotExcitedEnough)?;
     }
