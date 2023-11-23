@@ -120,6 +120,23 @@ impl CliAppBuilder {
         let force_color = self.force_color;
         miette::set_hook(Box::new(move |_| {
             let mut builder = miette::MietteHandlerOpts::new();
+            // Miette's default 80-column width for line-wrapping errors is too
+            // aggressive. Miette *does* "need" a linewrap threshold because it
+            // pretty-renders with indentation, which a terminal's builtin wrap
+            // won't respect, producing uglier output than if miette handled it
+            //
+            // This Comment Is In Memoriam To cargo-dist's error_manifest test,
+            // which snapshot-tested a miette error. This test would "randomly"
+            // break all the time but we soon realized it was breaking because:
+            //
+            // cargo-dist sometimes has clean Cargo SemVer Versions like v1.0.0
+            // but usually cargo-dist likes messier SemVer Versions like v1.0.0-prerelease.1
+            //
+            // Every line of this comment is line-wrapped to 80 columns, except
+            // one line. And although our snapshot tests strip versions strings
+            // from the output, it's as a post-process that comes after miette.
+            // Hopefully you see why I think this value should be more than 80.
+            builder = builder.width(120);
             if let Some(force_color) = force_color {
                 builder = builder.color(force_color);
             }
