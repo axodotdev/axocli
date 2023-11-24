@@ -67,7 +67,7 @@ dependencies = [
 
 [[package]]
 name = "axocli"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "backtrace",
  "backtrace-ext",
