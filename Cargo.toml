@@ -1,6 +1,6 @@
 [package]
 name = "axocli"
-version = "0.1.1"
+version = "0.2.0"
 edition = "2021"
 description = "common code for setting up a CLI App and handling errors/printing."
 repository = "https://github.com/axodotdev/axocli"
