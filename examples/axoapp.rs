@@ -40,7 +40,7 @@ fn run(app: &axocli::CliApp<CliArgs>) -> Result<(), Report> {
         "i have no exclamation marks but i must scream"
     );
     if app.config.exclaim_count < 3 {
-        return Err(AxoAppError::NotExcitedEnough)?;
+        Err(AxoAppError::NotExcitedEnough)?;
     }
     let message = "hello axoapp";
 
