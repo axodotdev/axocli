@@ -154,6 +154,9 @@ impl CliAppBuilder {
             if let Some(msg) = payload.downcast_ref::<&str>() {
                 message = msg.to_string();
             }
+            // This is being moved to pedantic in 1.80.0; just
+            // tag an allow for now and remove later.
+            #[allow(clippy::assigning_clones)]
             if let Some(msg) = payload.downcast_ref::<String>() {
                 message = msg.clone();
             }
