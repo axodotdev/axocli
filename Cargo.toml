@@ -12,10 +12,10 @@ license = "MIT OR Apache-2.0"
 backtrace = "0.3.69"
 backtrace-ext = "0.2.1"
 console = "0.15.8"
-miette = { version = "7.6.0", features = ["fancy"] }
+miette = { version = "7.2.0", features = ["fancy"] }
 serde = "1.0.200"
 serde_json = "1.0.95"
-thiserror = "2.0.12"
+thiserror = "2.0.0"
 tracing = "0.1.40"
 tracing-subscriber = "0.3.18"
 
