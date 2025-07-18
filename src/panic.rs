@@ -8,7 +8,7 @@ use miette::Diagnostic;
 use thiserror::Error;
 
 #[derive(Debug, Error, Diagnostic)]
-#[error("{0}{}", Panic::backtrace())]
+#[error("{0}{backtrace}", backtrace=Panic::backtrace())]
 #[diagnostic(help("set the `RUST_BACKTRACE=1` environment variable to display a backtrace."))]
 pub struct Panic(pub String);
 
