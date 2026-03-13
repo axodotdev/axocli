@@ -17,7 +17,7 @@ serde = "1.0.200"
 serde_json = "1.0.95"
 thiserror = "2.0.0"
 tracing = "0.1.40"
-tracing-subscriber = "0.3.18"
+tracing-subscriber = "0.3.23"
 
 # dev-deps are use by the example
 # for sake of clarity duplicate deps are repeated here!
